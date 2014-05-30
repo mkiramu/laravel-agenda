@@ -2,10 +2,10 @@
 
 class Contacto extends Eloquent {
 
-	public $timestamp = false;
+	// public $timestamp = false;
 
 	public function usuario() {
-		return $this->belongTo('User');
+		return $this->belongsTo('User');
 	}
 
 }
