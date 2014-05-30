@@ -23,7 +23,7 @@ class UsuarioController extends BaseController {
 	public function detalle_usuario($id_usuario)
 	{
 		$usuario = User::find($id_usuario);
-		return "Mis nombres y apellidos son: ". $usuario->nombres ." ".$usuario->apellidos;
+		return View::make('usuario.detalle-usuario', array('dato'=>$usuario));
 	}
 
 }

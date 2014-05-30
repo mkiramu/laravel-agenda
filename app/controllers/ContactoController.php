@@ -33,13 +33,13 @@ class ContactoController extends BaseController {
 	{
 		$usuario = User::find($id_usuario);
 		$contactos = $usuario->contacto;
-		return $contactos;
+		return View::make('contacto.listar-contactos', array('datos'=>$contactos));
 	}
 	
 	public function detalle_contacto($id_usuario, $id_contacto)
 	{
 		$contacto = Contacto::find($id_contacto);
-		return "Nombre contacto: ". $contacto->nombre ." email: ".$contacto->email;
+		return View::make('contacto.detalle-contacto', array('dato'=>$contacto));
 	}
 
 }
